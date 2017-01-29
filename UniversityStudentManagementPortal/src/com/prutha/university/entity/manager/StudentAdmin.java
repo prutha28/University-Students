@@ -11,11 +11,15 @@ import java.util.List;
 
 import com.prutha.university.entities.Student;
 import com.prutha.university.utils.DateUtils;
-import com.prutha.university.utils.MySQLConnection;
+import com.prutha.university.utils.ConnectionUtil;
 
 public class StudentAdmin {
 
-	private static Connection conn = MySQLConnection.getConnectionInstance(); 
+	private static Connection conn = ConnectionUtil.getConnectionInstance(); 
+
+	public static void main(String[] args) throws SQLException{
+		Student s = getStudent("johndoe");
+	}
 	
 	public static List<Student> getAllStudents() throws SQLException{
 		List<Student> students = new ArrayList<Student>();
@@ -35,9 +39,6 @@ public class StudentAdmin {
 		return students;
 	}
 	
-	public static void main(String[] args) throws SQLException{
-		Student s = getStudent("johndoe");
-	}
 	
 	public static Student getStudent( String unityId) throws SQLException{
 
@@ -86,7 +87,7 @@ public class StudentAdmin {
 		
 		// Insert into person table
 		String SQL = "INSERT INTO Person(unity_id, fname, lname, preferred_name, gender, dob, pwd ) "
-				+ "VALUES(?,?,?, ?,?,?,?)";
+				+ "VALUES(?,?,?,?,?,?,?)";
 		stmt = conn.prepareStatement(SQL);
 		stmt.setString(1, s.getUnityId());
 		stmt.setString(2, s.getFirstName());
