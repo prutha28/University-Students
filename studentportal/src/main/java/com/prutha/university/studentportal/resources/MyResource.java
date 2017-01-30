@@ -1,4 +1,4 @@
-package com.prutha.university.studentportal;
+package com.prutha.university.studentportal.resources;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

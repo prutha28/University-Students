@@ -1,4 +1,4 @@
-package com.prutha.university.studentportal;
+package com.prutha.university.studentportal.resources;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -7,7 +7,6 @@ import javax.ws.rs.core.MediaType;
 
 @Path("student")
 public class StudentResource {
-	
 	
     @GET
     @Produces(MediaType.TEXT_PLAIN)
