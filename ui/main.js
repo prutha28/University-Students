@@ -33,4 +33,4 @@ client.getStudent(function(error, response){
     	console.log(response);
   	}
 
-});
+}); // Get Student
