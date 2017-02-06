@@ -12,13 +12,13 @@ Resource Name 	| 			Endpoint 				      	|  	Action description in words 		 					
 				|	PUT /students/{id} 						|	Update the details of a student/Edit own Profile							|
 				|											|																				|
 				|	DELETE /students/{id} 					|	Remove a student from the system											|
-Faculty			|	GET /faculties							|	Get all faculties present in the system along with their details.			|
+<em>Faculty</em>|	GET /faculties							|	Get all faculties present in the system along with their details.			|
 				|	GET /faculties/{id}						|	Get the details of a specific faculty.										|
 				|	POST /faculties							|	Add a new faculty into the system.											|
 				|	PUT /faculties/{id}						|	Update the details of a student/Edit own Profile							|
 				|	DELETE /faculties/{id}					|	Remove a faculty from the system.											|
 				|											|																				|
-Courses			|	GET /courses 							|	Get all the courses present in the system along with their details.			|
+<em>Courses</em>|	GET /courses 							|	Get all the courses present in the system along with their details.			|
 				|	POST /courses 							|	Create/Add a new course to the system										|
 				|	GET /courses/{id}						|	Get the details of a specific courses 										|
 				|	PUT /courses/{id}						|	Update/Edit details for a particular courses 								|
