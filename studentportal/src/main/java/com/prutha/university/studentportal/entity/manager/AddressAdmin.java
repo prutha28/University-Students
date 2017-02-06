@@ -1,9 +1,9 @@
-package com.prutha.university.entity.manager;
+package com.prutha.university.studentportal.entity.manager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.prutha.university.entities.Address;
+import com.prutha.university.studentportal.entities.Address;
 
 public class AddressAdmin {
 

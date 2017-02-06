@@ -1,4 +1,4 @@
-package com.prutha.university.entity.manager;
+package com.prutha.university.studentportal.entity.manager;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.prutha.university.entities.Student;
-import com.prutha.university.utils.DateUtils;
-import com.prutha.university.utils.ConnectionUtil;
+import com.prutha.university.studentportal.entities.Student;
+import com.prutha.university.studentportal.utils.ConnectionUtil;
+import com.prutha.university.studentportal.utils.DateUtils;
 
 public class StudentAdmin {
 

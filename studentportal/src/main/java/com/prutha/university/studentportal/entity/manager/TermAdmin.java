@@ -1,4 +1,4 @@
-package com.prutha.university.entity.manager;
+package com.prutha.university.studentportal.entity.manager;
 
 import java.util.ArrayList;
 import java.util.List;

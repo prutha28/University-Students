@@ -1,4 +1,4 @@
-package com.prutha.university.utils;
+package com.prutha.university.studentportal.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
