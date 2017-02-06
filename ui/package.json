@@ -1,14 +1,16 @@
 {
-  "name": "studentportal",
-  "version": "0.0.0",
-  "description": "\"Student Portal Testing\"",
+  "name": "ui",
+  "version": "1.0.0",
+  "description": "",
   "main": "main.js",
+  "dependencies": {
+    "needle": "^1.4.3"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "needle": "^0.7.10"
-  }
+  "license": "ISC"
 }
