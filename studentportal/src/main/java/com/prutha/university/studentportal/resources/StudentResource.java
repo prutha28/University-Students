@@ -1,5 +1,7 @@
 package com.prutha.university.studentportal.resources;
 
+import java.sql.SQLException;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -12,15 +14,15 @@ import javax.ws.rs.core.MediaType;
 
 import com.prutha.university.studentportal.entities.Address;
 import com.prutha.university.studentportal.entities.Student;
+import com.prutha.university.studentportal.entity.manager.StudentAdmin;
 
 @Path("/students")
 public class StudentResource {
 	
 	@GET
 	@Produces(MediaType.TEXT_HTML)
-	public String getAllStudents(
-			@PathParam("studentId") String studentid){
-		return "<html><body><h1>Hi Students!</h1><p>" + studentid +  "</p></body></html>";
+	public String getAllStudents(){
+		return "<html><body><h1>Hi Students!</h1><p></p></body></html>";
 	}
 	
 	
@@ -28,8 +30,9 @@ public class StudentResource {
 	@Produces(MediaType.TEXT_HTML)
 	@Path("/{studentId}")
 	public String getStudent(
-			@PathParam("studentId") String studentid){
-		return "<html><body><h1>Hi student!</h1><p>" + studentid +  "</p></body></html>";
+			@PathParam("studentId") String studentid) throws SQLException{
+		Student s = StudentAdmin.getStudent(studentid);
+		return "<html><body><h1>Hi student!</h1><p>" + s +  "</p></body></html>";
 	}
 
 	@POST
