@@ -1,4 +1,4 @@
-package com.prutha.university.entities;
+package com.prutha.university.studentportal.entities;
 
 public class Department {
 
