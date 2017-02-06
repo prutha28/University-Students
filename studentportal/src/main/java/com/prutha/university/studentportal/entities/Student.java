@@ -1,5 +1,8 @@
 package com.prutha.university.studentportal.entities;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Student extends Person{
 
 	private String studentId;
