@@ -7,3 +7,4 @@
 .project
 Servers
 .gitignore
+node_modules/
