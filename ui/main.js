@@ -17,6 +17,8 @@ var client = {
 		needle.get("http://localhost:8080/studentportal/webapi/students", {headers:headers}, onResponse)
 		// using jquery
 		// using request
+		request("http://localhost:8080/studentportal/webapi/students", onResponse);
+
 	}
 
 };
@@ -25,7 +27,10 @@ var client = {
 client.getStudent(function(error, response){    
 	// var data = response.body;
     // console.log( JSON.stringify(response.body) );
-    console.log(response._headers);
-    // console.log(response);
+    // console.log(response._headers);
+    
+    if (!error && response.statusCode == 200) {
+    	console.log(response);
+  	}
 
 });
