@@ -2,8 +2,7 @@
 .DS_Store
 .metadata
 .classpath
-*.reccomenders/
-.reccomenders
+.recommenders
 .settings
 .project
 Servers
