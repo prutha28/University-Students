@@ -23,18 +23,23 @@ public class StudentService {
 	
 	public static List<Student> getAllStudents() throws SQLException{
 		List<Student> students = new ArrayList<Student>();
-		String SQL = "SELECT * FROM Students";
-		Statement stmt = conn.createStatement();
-		ResultSet rs = stmt.executeQuery(SQL);
+//		String SQL = "SELECT * FROM Students";
+//		Statement stmt = conn.createStatement();
+//		ResultSet rs = stmt.executeQuery(SQL);
+//		
+//		while( rs.next()){
+//			Student s = new Student();
+//			s.setFirstName(rs.getString("fname"));
+//			s.setLastName(rs.getString("lname"));
+//			s.setPreferredName(rs.getString("preferred_name"));
+//			s.setCgpa(rs.getFloat("cgpa"));
+//			s.setDateOfBirth(rs.getDate("dob"));
+//		}
 		
-		while( rs.next()){
-			Student s = new Student();
-			s.setFirstName(rs.getString("fname"));
-			s.setLastName(rs.getString("lname"));
-			s.setPreferredName(rs.getString("preferred_name"));
-			s.setCgpa(rs.getFloat("cgpa"));
-			s.setDateOfBirth(rs.getDate("dob"));
-		}
+		Student s1 = new Student("1", "Alex");
+		Student s2 = new Student("1", "Mer");
+		students.add(s1);
+		students.add(s2);
 		
 		return students;
 	}
