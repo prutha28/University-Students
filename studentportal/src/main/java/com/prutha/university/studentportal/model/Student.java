@@ -10,6 +10,17 @@ public class Student extends Person{
 	private float cgpa;
 	private String advisorId;
 	
+	//TODO remove this
+	public Student(){
+		
+	}
+	
+	//TODO remove this	
+	public Student(String id, String name){
+		this.studentId = id;
+		this.setFirstName(name);
+	}
+	
 	public String getStudentId() {
 		return studentId;
 	}
