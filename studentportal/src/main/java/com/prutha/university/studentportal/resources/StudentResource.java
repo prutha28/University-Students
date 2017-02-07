@@ -1,6 +1,7 @@
 package com.prutha.university.studentportal.resources;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -18,11 +19,14 @@ import com.prutha.university.studentportal.services.StudentService;
 
 @Path("/students")
 public class StudentResource {
+
+	StudentService service = new StudentService();
 	
 	@GET
-	@Produces(MediaType.TEXT_HTML)
-	public String getAllStudents(){
-		return "<html><body><h1>Hi Students!</h1><p></p></body></html>";
+	@Produces(MediaType.APPLICATION_XML)
+	public List<Student> getAllStudents() throws SQLException{
+//		return "<html><body><h1>Hi Students!</h1><p></p></body></html>";
+		return service.getAllStudents();
 	}
 	
 	
