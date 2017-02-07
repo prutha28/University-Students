@@ -13,6 +13,7 @@ import javax.ws.rs.core.MediaType;
 public class CourseResource {
 
 	@GET
+	@Produces(MediaType.TEXT_HTML)
 	public String getAllCourses(){
 		return "All courses";
 	}
