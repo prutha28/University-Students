@@ -3,6 +3,7 @@
 
 # REST Endpoints
 
+<pre>
 
 Resource Name 	| 			Endpoint 				      			|  	Action description in words 		 							       	    | 		Participant
 ----------------|---------------------------------------------------|-------------------------------------------------------------------------------|----------------------------
@@ -30,7 +31,7 @@ Resource Name 	| 			Endpoint 				      			|  	Action description in words 		 			
 				|	```DELETE /students/{id}/courses/{id}```		|	Unenroll the student for a course/ Drop the course 							|
 				|													|																				|
 				|													|																				|
-				|	```GET /faculties/{id}/courses	```				|	Get a list of all courses for a Faculty 									|
+<b>Faculties</b>|	```GET /faculties/{id}/courses	```				|	Get a list of all courses for a Faculty 									|
 				|	```GET /courses/{id}/faculties 	```				|	Get a list of facilties teaching a particular course 						|
 				|	```POST /faculties/{id}/courses```				|	Add a course for the faculty to teach 										|
 				|	```DELETE /faculties/{id}/courses/{id}```		|	Remove a specific course taught by the faculty   							|
@@ -61,6 +62,9 @@ Resource Name 	| 			Endpoint 				      			|  	Action description in words 		 			
 				|	```DELETE /students/{id}/contacts/{id}``` 		|	Remove an existing contact from the student details 						|
 				|													|																				|
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+</pre>
+
 Note : 
 
 * There is no PUT operation allowed for /students/{id}/courses/{id} and /faculties/{id}/courses. The only operations allowed are adding and removing a course from the student/faculty. When the details for a given course are updated through the endpoint /courses/{id}, the changes are automatically reflected under the course details of student/faculty.
