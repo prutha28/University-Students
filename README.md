@@ -9,10 +9,9 @@ Resource Name 	| 			Endpoint 				      			|  	Action description in words 		 			
 <b>Students</b>	|	```GET /students``` 				  			|   Get all the students present in the system along with their details. 		|
 				|	```GET /students/{id}```			  			|	Get the details of a particular students 									|
 				|	```POST /students ```							|	Add a new student to the system 											|
-				|	```PUT /students/{id}``` 						|	Update the details of a student/Edit own Profile							|
-				|													|																				|
 				|	```DELETE /students/{id}``` 					|	Remove a student from the system											|
-<b>Faculty</b>	|	```GET /faculties	```							|	Get all faculties present in the system along with their details.			|
+				|													|																				|
+<b>Faculties</b>|	```GET /faculties	```							|	Get all faculties present in the system along with their details.			|
 				|	```GET /faculties/{id}```						|	Get the details of a specific faculty.										|
 				|	```POST /faculties```							|	Add a new faculty into the system.											|
 				|	```PUT /faculties/{id}```						|	Update the details of a student/Edit own Profile							|
@@ -30,7 +29,7 @@ Resource Name 	| 			Endpoint 				      			|  	Action description in words 		 			
 				|	```DELETE /students/{id}/courses/{id}```		|	Unenroll the student for a course/ Drop the course 							|
 				|													|																				|
 				|													|																				|
-<b>Faculties</b>|	```GET /faculties/{id}/courses	```				|	Get a list of all courses for a Faculty 									|
+				|	```GET /faculties/{id}/courses	```				|	Get a list of all courses for a Faculty 									|
 				|	```GET /courses/{id}/faculties 	```				|	Get a list of facilties teaching a particular course 						|
 				|	```POST /faculties/{id}/courses```				|	Add a course for the faculty to teach 										|
 				|	```DELETE /faculties/{id}/courses/{id}```		|	Remove a specific course taught by the faculty   							|
