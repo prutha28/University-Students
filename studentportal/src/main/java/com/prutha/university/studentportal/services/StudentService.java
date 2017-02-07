@@ -1,4 +1,4 @@
-package com.prutha.university.studentportal.entity.manager;
+package com.prutha.university.studentportal.services;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +13,7 @@ import com.prutha.university.studentportal.model.Student;
 import com.prutha.university.studentportal.utils.ConnectionUtil;
 import com.prutha.university.studentportal.utils.DateUtils;
 
-public class StudentAdmin {
+public class StudentService {
 
 	private static Connection conn = ConnectionUtil.getConnectionInstance(); 
 

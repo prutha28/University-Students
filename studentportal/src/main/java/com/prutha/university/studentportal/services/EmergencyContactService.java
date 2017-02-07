@@ -1,11 +1,11 @@
-package com.prutha.university.studentportal.entity.manager;
+package com.prutha.university.studentportal.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.prutha.university.studentportal.model.EmergencyContact;
 
-public class EmergencyContactAdmin{
+public class EmergencyContactService{
 
 	public List<EmergencyContact> getAllEmergencyContacts(){
 		List<EmergencyContact> emergencyContacts = new ArrayList<EmergencyContact>();

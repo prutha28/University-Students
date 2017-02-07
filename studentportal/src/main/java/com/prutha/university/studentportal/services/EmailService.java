@@ -1,11 +1,11 @@
-package com.prutha.university.studentportal.entity.manager;
+package com.prutha.university.studentportal.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.prutha.university.studentportal.model.Email;
 
-public class EmailAdmin {
+public class EmailService {
 
 	public List<Email> getAllEmails(){
 		List<Email> emails = new ArrayList<Email>();

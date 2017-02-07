@@ -12,9 +12,9 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.prutha.university.studentportal.entity.manager.StudentAdmin;
 import com.prutha.university.studentportal.model.Address;
 import com.prutha.university.studentportal.model.Student;
+import com.prutha.university.studentportal.services.StudentService;
 
 @Path("/students")
 public class StudentResource {
@@ -31,7 +31,7 @@ public class StudentResource {
 	@Path("/{studentId}")
 	public String getStudent(
 			@PathParam("studentId") String studentid) throws SQLException{
-		Student s = StudentAdmin.getStudent(studentid);
+		Student s = StudentService.getStudent(studentid);
 		return "<html><body><h1>Hi student!</h1><p>" + s +  "</p></body></html>";
 	}
 

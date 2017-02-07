@@ -1,11 +1,11 @@
-package com.prutha.university.studentportal.entity.manager;
+package com.prutha.university.studentportal.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.prutha.university.studentportal.model.Department;
 
-public class DepartmentAdmin {
+public class DepartmentService {
 
 	public List<Department> getAllDepartments(){
 		List<Department> depts = new ArrayList<Department>();

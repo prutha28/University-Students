@@ -1,11 +1,11 @@
-package com.prutha.university.studentportal.entity.manager;
+package com.prutha.university.studentportal.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.prutha.university.studentportal.model.Professor;
 
-public class ProfessorAdmin{
+public class ProfessorService{
 	
 	public List<Professor> getAllProfessors(){
 		List<Professor> professors = new ArrayList<Professor>();

@@ -1,13 +1,13 @@
-package com.prutha.university.studentportal.entity.manager;
+package com.prutha.university.studentportal.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.prutha.university.studentportal.model.Address;
 
-public class AddressAdmin {
+public class AddressService {
 
-	public List<AddressAdmin> getAllAddresses(){
+	public List<AddressService> getAllAddresses(){
 		List<Address> addresses = new ArrayList<Address>();
 		return null;
 	}

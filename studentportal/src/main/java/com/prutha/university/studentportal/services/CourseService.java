@@ -1,11 +1,11 @@
-package com.prutha.university.studentportal.entity.manager;
+package com.prutha.university.studentportal.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.prutha.university.studentportal.model.Course;
 
-public class CourseAdmin {
+public class CourseService {
 
 	public List<Course> getAllCourses(){
 		List<Course> courses = new ArrayList<Course>();

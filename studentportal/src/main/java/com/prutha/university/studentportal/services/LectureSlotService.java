@@ -1,11 +1,11 @@
-package com.prutha.university.studentportal.entity.manager;
+package com.prutha.university.studentportal.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.prutha.university.studentportal.model.LectureSlot;
 
-public class LectureSlotAdmin {
+public class LectureSlotService {
 
 	public List<LectureSlot> getAllLectureSlots(){
 		List<LectureSlot> lectureSlots = new ArrayList<LectureSlot>();
