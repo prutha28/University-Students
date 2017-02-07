@@ -1,4 +1,4 @@
-package com.prutha.university.studentportal.entities;
+package com.prutha.university.studentportal.model;
 
 public class Teaches {
 

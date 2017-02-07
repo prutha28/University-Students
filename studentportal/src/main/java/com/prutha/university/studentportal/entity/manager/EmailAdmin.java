@@ -3,7 +3,7 @@ package com.prutha.university.studentportal.entity.manager;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.prutha.university.studentportal.entities.Email;
+import com.prutha.university.studentportal.model.Email;
 
 public class EmailAdmin {
 

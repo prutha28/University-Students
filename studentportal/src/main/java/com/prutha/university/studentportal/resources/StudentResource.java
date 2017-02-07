@@ -12,9 +12,9 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.prutha.university.studentportal.entities.Address;
-import com.prutha.university.studentportal.entities.Student;
 import com.prutha.university.studentportal.entity.manager.StudentAdmin;
+import com.prutha.university.studentportal.model.Address;
+import com.prutha.university.studentportal.model.Student;
 
 @Path("/students")
 public class StudentResource {

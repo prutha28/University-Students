@@ -3,7 +3,7 @@ package com.prutha.university.studentportal.entity.manager;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.prutha.university.studentportal.entities.Professor;
+import com.prutha.university.studentportal.model.Professor;
 
 public class ProfessorAdmin{
 	
