@@ -34,6 +34,7 @@ public class CourseResource {
 	@PUT
 	@Path("/{courseId}")
 	@Produces(MediaType.TEXT_HTML)
+	@Consumes(MediaType.TEXT_HTML)
 	public String updateCourse( String courseId){
 		return "Updating course details";
 	}
@@ -41,6 +42,7 @@ public class CourseResource {
 	@DELETE
 	@Path("/{courseId}")
 	@Produces(MediaType.TEXT_HTML)
+	@Consumes(MediaType.TEXT_HTML)
 	public String deleteCourse( String courseId){
 		return "Deleting a course";
 	}
