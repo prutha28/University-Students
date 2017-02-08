@@ -1,6 +1,7 @@
 package com.prutha.university.studentportal.resources;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -24,9 +25,15 @@ public class StudentResource {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
-	public List<Student> getAllStudents() throws SQLException{
+	public List<Student> getAllStudents(){
 //		return "<html><body><h1>Hi Students!</h1><p></p></body></html>";
-		return service.getAllStudents();
+//		return service.getAllStudents();
+		List<Student> students = new ArrayList<Student>();
+		Student s1 = new Student("1", "Alex");
+		Student s2 = new Student("1", "Mer");
+		students.add(s1);
+		students.add(s2);
+		return students;
 	}
 	
 	
