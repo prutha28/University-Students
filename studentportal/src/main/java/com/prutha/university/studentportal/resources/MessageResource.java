@@ -21,7 +21,7 @@ public class MessageResource {
 	private MessageService service = new MessageService();
 	
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<Message> getMessages(){
 		return service.listAllMessages();
 	}
@@ -35,14 +35,14 @@ public class MessageResource {
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Message addMessage(Message message){
 		return service.addMessage(message);
 	}
 	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{messageId}")
 	public Message updateMessage(@PathParam("messageId")int id, Message m){
 		return service.updateMessage(id, m);
@@ -50,7 +50,7 @@ public class MessageResource {
 	
 	@DELETE
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{messageId}")
 	public Message deleteMessage( @PathParam("messageId")int id) throws Exception{
 		return service.removeMessage(id);
