@@ -12,12 +12,14 @@ import com.prutha.university.studentportal.model.Message;
  */
 public class Database {
 
-	public Map<Integer, Message> messages = new HashMap<Integer, Message>();
-	
-	public Database(){
-		messages.put(1, new Message(1, "Hello World!", "prutha"));
-		messages.put(2, new Message(2, "Hello everyone!", "prisha"));
+	private static Map<Integer, Message> messages = new HashMap<Integer, Message>();
+
+	public static Map<Integer, Message> getMessages() {
+		return messages;
 	}
 
+	public static void setMessages(Map<Integer, Message> messages) {
+		messages = messages;
+	}
 	
 }
