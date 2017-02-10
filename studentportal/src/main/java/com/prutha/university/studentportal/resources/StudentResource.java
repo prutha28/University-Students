@@ -14,7 +14,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.prutha.university.studentportal.model.Address;
 import com.prutha.university.studentportal.model.Student;
 import com.prutha.university.studentportal.services.StudentService;
 
