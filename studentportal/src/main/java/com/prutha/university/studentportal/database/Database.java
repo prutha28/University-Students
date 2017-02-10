@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.prutha.university.studentportal.model.Message;
+import com.prutha.university.studentportal.model.Profile;
 
 /**
  * A Dummy database class that holds some dummy data
@@ -13,13 +14,15 @@ import com.prutha.university.studentportal.model.Message;
 public class Database {
 
 	private static Map<Integer, Message> messages = new HashMap<Integer, Message>();
+	private static Map<Integer, Profile> profiles = new HashMap<Integer, Profile>();
 
 	public static Map<Integer, Message> getMessages() {
 		return messages;
 	}
-
-	public static void setMessages(Map<Integer, Message> messages) {
-		messages = messages;
+	
+	public static Map<Integer, Profile> getProfiles() {
+		return profiles;
 	}
+
 	
 }
