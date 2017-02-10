@@ -3,7 +3,7 @@ package com.prutha.university.studentportal.model;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Contact {
+public class Phone {
 
 	private String unityId;
 	private String type;

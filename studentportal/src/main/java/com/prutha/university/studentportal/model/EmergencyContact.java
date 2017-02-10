@@ -3,7 +3,7 @@ package com.prutha.university.studentportal.model;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class EmergencyContact extends Contact{
+public class EmergencyContact extends Phone{
 
 	private String fullName;
 	private String relationShip;
