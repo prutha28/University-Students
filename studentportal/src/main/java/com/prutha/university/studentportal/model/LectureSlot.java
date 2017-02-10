@@ -2,6 +2,9 @@ package com.prutha.university.studentportal.model;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class LectureSlot {
 
 	private String slotId;

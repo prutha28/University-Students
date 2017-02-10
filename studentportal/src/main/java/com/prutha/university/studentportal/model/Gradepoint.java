@@ -1,10 +1,13 @@
 package com.prutha.university.studentportal.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * @author prutha
  * This class holds the number of creditpoints for each grade.
  * e.g. A+ = 4.3 , A = 4.0 etc. 
  */
+@XmlRootElement
 public class Gradepoint {
 
 	private char grade;

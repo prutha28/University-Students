@@ -1,5 +1,8 @@
 package com.prutha.university.studentportal.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Department {
 
 	private String deptId;
