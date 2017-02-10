@@ -37,9 +37,19 @@ Resource Name 	| 			Endpoint 				      			|  	Action description in words 		 			
 <b>Schedule</b>	|	```GET /students/{id}/schedule 		```			|	Get the schedule for student 												|
 				|	```GET /faculties/{id}/schedule 	```			|	Get the schedule for faculty 												|
 				|													|																				|
+				|													|																				|
+<b>Depts</b>    |	```GET /departments/			```				|	Get all the departments and the details present in the university			|
+				|	```GET /departments/{id}/ ```					|	Get the details of a specific department in the university	 				|
+				|	```POST /departments/ ```						|	Create a new department in the university							 		|
+				|	```PUT /departments/{id}/ ```					|	Update the details of a specific department in the university	 			|				
+				|	```DELETE /departments/{id}/ ```				|	Remove the department and associated details from the university			|							
+				|													|																				|
+				|													|																				|
 <b>GradeBook</b>|	```GET /students/{id}/grades	```				|	Get all the grades obtained by the student for all courses in all semesters |
 				|	```GET /students/{id}/grades?course=id ```		|	Get the grades that the student obtained in a specific course 				|
 				|	```GET /students/{id}/grades?semester=fall```	|	Get all the grades that the student obtained in a specific semester 		|
+				|													|																				|
+				|													|																				|
 				|													|																				|
 <b>Addresses</b>|	```GET /students/{id}/addresses ```				|	Get a list of all addresses for the student 								|
 				|	```POST /students/{id}/addresses``` 			|	Add a new address to a list of addresses for the student 					|
@@ -53,11 +63,11 @@ Resource Name 	| 			Endpoint 				      			|  	Action description in words 		 			
 				|	```PUT /students/{id}/emails/{id} 	```			|	Update an existing email for the student 									|
 				|	```DELETE /students/{id}/emails/{id} ```		|	Remove an existing email from the student details							|
 				|													|																				|				
-<b>Contacts</b>	|	```GET /students/{id}/contacts ``` 				|	Get a list of all contacts for the student 									|
-				|	```POST /students/{id}/contacts ```				|	Add a new contact to a list of addresses for the student 					|
-				|	```GET /students/{id}/contacts/{id}``` 			|	Get a specific contact for the student 										|
-				|	```PUT /students/{id}/contacts/{id}```			|	Update an existing contact for the student 									|
-				|	```DELETE /students/{id}/contacts/{id}``` 		|	Remove an existing contact from the student details 						|
+<b>Phones</b>	|	```GET /students/{id}/phones ``` 				|	Get a list of all contacts for the student 									|
+				|	```POST /students/{id}/phones ```				|	Add a new contact to a list of addresses for the student 					|
+				|	```GET /students/{id}/phones/{id}``` 			|	Get a specific contact for the student 										|
+				|	```PUT /students/{id}/phones/{id}```			|	Update an existing contact for the student 									|
+				|	```DELETE /students/{id}/phones/{id}``` 		|	Remove an existing contact from the student details 						|
 				|													|																				|
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
