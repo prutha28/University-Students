@@ -50,7 +50,7 @@ public class AddressResource {
 	@Path("/{addressId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Address deleteAddress( @PathParam("addressId") String addressId, Address address){
+	public Address deleteAddress( @PathParam("addressId") String addressId){
 		return null;
 	}
 }

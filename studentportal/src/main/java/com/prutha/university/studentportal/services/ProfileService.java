@@ -36,8 +36,8 @@ public class ProfileService {
 		return profiles.get(profile.getId());
 	}
 
-	public Profile deleteProfile(Profile profile) {
-		return profiles.remove(profile.getId());
+	public Profile deleteProfile(int profileId) {
+		return profiles.remove(profileId);
 	}
 
 }

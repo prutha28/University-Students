@@ -53,8 +53,7 @@ public class ProfileResource {
 	@Path("/{profileId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Profile deleteProfile(@PathParam("profileId") int id, Profile profile){
-		profile.setId(id);
-		return service.deleteProfile( profile);
+	public Profile deleteProfile(@PathParam("profileId") int id){
+		return service.deleteProfile( id);
 	}
 }

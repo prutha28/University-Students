@@ -49,7 +49,7 @@ public class CourseResource {
 	@Path("/{courseId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Course deleteCourse( @PathParam("courseId") String courseId, Course course){
+	public Course deleteCourse( @PathParam("courseId") String courseId){
 		return null;
 	}
 }

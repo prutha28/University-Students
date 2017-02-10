@@ -55,7 +55,7 @@ public class StudentResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{studentId}")
 	public Student deleteStudent(
-			@PathParam("studentId") String studentid, Student s){
+			@PathParam("studentId") String studentid){
 		return null ;
 	}
 }

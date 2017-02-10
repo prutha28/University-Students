@@ -50,7 +50,7 @@ public class EmailResource {
 	@Path("/{emailId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Email deleteEmail( @PathParam("emailId") String emailId, Email email){
+	public Email deleteEmail( @PathParam("emailId") String emailI){
 		return null;
 	}
 }

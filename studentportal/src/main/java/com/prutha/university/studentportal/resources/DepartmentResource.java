@@ -49,7 +49,7 @@ public class DepartmentResource {
 	@Path("/{deptId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Department deletedepartment( @PathParam("deptId") String deptId, Department department){
+	public Department deletedepartment( @PathParam("deptId") String deptId){
 		return null;
 	}
 }
