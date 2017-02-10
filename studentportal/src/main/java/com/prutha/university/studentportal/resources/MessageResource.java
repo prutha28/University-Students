@@ -72,4 +72,10 @@ public class MessageResource {
 	public Message deleteMessage( @PathParam("messageId")int id) throws Exception{
 		return service.removeMessage(id);
 	}
+	
+	@Path("/{messageId}/comments")
+	public CommentResource getCommentResource(){
+		return new CommentResource();
+	}
+	
 }
