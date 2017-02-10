@@ -3,24 +3,24 @@ package com.prutha.university.studentportal.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.prutha.university.studentportal.model.Professor;
+import com.prutha.university.studentportal.model.Faculty;
 
 public class ProfessorService{
 	
-	public List<Professor> getAllProfessors(){
-		List<Professor> professors = new ArrayList<Professor>();
+	public List<Faculty> getAllProfessors(){
+		List<Faculty> professors = new ArrayList<Faculty>();
 		return null;
 	}
 	
-	public Professor getProfessor( String professorId){
+	public Faculty getProfessor( String professorId){
 		return null;	
 	}
 	
-	public boolean addProfessor( Professor professor){
+	public boolean addProfessor( Faculty professor){
 		return false;	
 	}
 	
-	public boolean updateProfessor( Professor professor){
+	public boolean updateProfessor( Faculty professor){
 		return false;	
 	}
 	

@@ -1,7 +1,5 @@
 package com.prutha.university.studentportal.resources;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -23,50 +21,41 @@ public class StudentResource {
 	StudentService service = new StudentService();
 	
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<Student> getAllStudents(){
-//		return "<html><body><h1>Hi Students!</h1><p></p></body></html>";
-//		return service.getAllStudents();
-		List<Student> students = new ArrayList<Student>();
-		Student s1 = new Student("1", "Alex");
-		Student s2 = new Student("1", "Mer");
-		students.add(s1);
-		students.add(s2);
-		return students;
+		return null;
 	}
 	
-	
 	@GET
-	@Produces(MediaType.TEXT_HTML)
 	@Path("/{studentId}")
+	@Produces(MediaType.APPLICATION_JSON)
 	public String getStudent(
-			@PathParam("studentId") String studentid) throws SQLException{
-		Student s = StudentService.getStudent(studentid);
-		return "<html><body><h1>Hi student!</h1><p>" + s +  "</p></body></html>";
+			@PathParam("studentId") String studentid){
+		return null;
 	}
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.TEXT_HTML)
-	public String addStudent(){
-		return "<html><body><h1>Hi Prutha!</h1><p>";
+	@Produces(MediaType.APPLICATION_JSON)
+	public Student addStudent( Student s){
+		return null ;
 	}
 	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.TEXT_HTML)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{studentId}")
-	public String updateStudent(
-			@PathParam("studentId") String studentid){
-		return "StudentDO details updated successfully.";
+	public Student updateStudent(
+			@PathParam("studentId") String studentid, Student s){
+		return null;
 	}
 	
 	@DELETE
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.TEXT_HTML)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{studentId}")
-	public String deleteStudent(
-			@PathParam("studentId") String studentid){
-		return "StudentDO deleted successfully.";
+	public Student deleteStudent(
+			@PathParam("studentId") String studentid, Student s){
+		return null ;
 	}
 }
