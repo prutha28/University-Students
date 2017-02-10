@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.prutha.university.studentportal.model.Address;
 import com.prutha.university.studentportal.model.Course;
+import com.prutha.university.studentportal.model.Department;
 import com.prutha.university.studentportal.model.Email;
 import com.prutha.university.studentportal.model.Faculty;
 import com.prutha.university.studentportal.model.Gradepoint;
@@ -13,7 +14,6 @@ import com.prutha.university.studentportal.model.Message;
 import com.prutha.university.studentportal.model.Phone;
 import com.prutha.university.studentportal.model.Profile;
 import com.prutha.university.studentportal.model.Student;
-import com.prutha.university.studentportal.resources.FacultyResource;
 
 /**
  * A Dummy database class that holds some dummy data
@@ -32,7 +32,12 @@ public class Database {
 	private static Map<Integer, Email> emails = new HashMap<Integer, Email>();
 	private static Map<Integer, Gradepoint> grades = new HashMap<Integer, Gradepoint>();
 	private static Map<Integer, LectureSlot> schedules = new HashMap<Integer, LectureSlot>();
+	private static Map<Integer, Department> departments = new HashMap<Integer, Department>();
 	
+	public static Map<Integer, Department> getDepartments() {
+		return departments;
+	}
+
 	public static Map<Integer, Message> getMessages() {
 		return messages;
 	}
