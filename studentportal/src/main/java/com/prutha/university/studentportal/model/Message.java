@@ -1,5 +1,7 @@
 package com.prutha.university.studentportal.model;
 
+import java.util.Date;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -8,7 +10,16 @@ public class Message {
 	private int id;
 	private String message;
 	private String author;
+	private Date createdAt;
 	
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
 	/**
 	 * No Args Constructor
 	 */
@@ -40,10 +51,10 @@ public class Message {
 	}
 
 	public Message(int id, String message, String author) {
-		super();
 		this.id = id;
 		this.message = message;
 		this.author = author;
+		this.createdAt = new Date(); 
 	}
 
 }
