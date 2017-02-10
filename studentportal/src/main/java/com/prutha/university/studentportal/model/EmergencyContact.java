@@ -9,6 +9,17 @@ public class EmergencyContact extends Phone{
 	private String relationShip;
 	private String countryCode;
 	
+	public EmergencyContact(){
+		
+	}
+	
+	public EmergencyContact(String fullName, String relationShip, String countryCode) {
+		super();
+		this.fullName = fullName;
+		this.relationShip = relationShip;
+		this.countryCode = countryCode;
+	}
+
 	public String getFullName() {
 		return fullName;
 	}

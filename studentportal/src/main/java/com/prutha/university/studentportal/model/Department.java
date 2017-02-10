@@ -10,6 +10,16 @@ public class Department {
 	private String hodName;
 	private int facultyCount;
 
+	public Department() {
+	}
+
+	public Department(String deptId, String deptName, String hodName, int facultyCount) {
+		this.deptId = deptId;
+		this.deptName = deptName;
+		this.hodName = hodName;
+		this.facultyCount = facultyCount;
+	}
+
 	public String getDeptId() {
 		return deptId;
 	}

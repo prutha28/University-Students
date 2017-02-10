@@ -13,6 +13,10 @@ public class Address {
 	private String zipcode;
 	private String country;
 	
+	public Address(){
+		
+	}
+	
 	public String getAddressId() {
 		return addressId;
 	}

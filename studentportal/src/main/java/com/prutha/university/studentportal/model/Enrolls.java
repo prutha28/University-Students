@@ -10,6 +10,18 @@ public class Enrolls {
 	private String termId;
 	private char gradeScored;
 	
+	public Enrolls(){
+		
+	}
+	
+	public Enrolls(String studentId, String courseId, String termId, char gradeScored) {
+		super();
+		this.studentId = studentId;
+		this.courseId = courseId;
+		this.termId = termId;
+		this.gradeScored = gradeScored;
+	}
+
 	public String getStudentId() {
 		return studentId;
 	}

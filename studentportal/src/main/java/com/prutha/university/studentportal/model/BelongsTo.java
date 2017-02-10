@@ -8,6 +8,10 @@ public class BelongsTo {
 	private String courseId;
 	private String deptId;
 	
+	public BelongsTo(){
+		
+	}
+	
 	public String getCourseId() {
 		return courseId;
 	}

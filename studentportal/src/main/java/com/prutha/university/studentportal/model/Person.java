@@ -15,6 +15,24 @@ public class Person {
 	private String gender;
 	private Date dateOfBirth;
 	
+	public Person(){
+		
+	}
+	
+	public Person(String unityId, String firstName, String lastName, String preferredName, String password,
+			String gender, Date dateOfBirth) {
+		super();
+		this.unityId = unityId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.preferredName = preferredName;
+		this.password = password;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
+	}
+
+
+
 	public String getUnityId() {
 		return unityId;
 	}

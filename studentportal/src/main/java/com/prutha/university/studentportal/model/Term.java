@@ -12,6 +12,17 @@ public class Term {
 	private Date fromDate;
 	private Date toDate;
 	
+	public Term(){
+		
+	}
+	
+	public Term(String termId, String semester, Date fromDate, Date toDate) {
+		this.termId = termId;
+		this.semester = semester;
+		this.fromDate = fromDate;
+		this.toDate = toDate;
+	}
+
 	public String getTermId() {
 		return termId;
 	}

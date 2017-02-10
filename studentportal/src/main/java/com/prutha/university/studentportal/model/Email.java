@@ -9,6 +9,17 @@ public class Email {
 	private String type;
 	private String unityId;
 	
+	public Email(){
+		
+	}
+	
+	public Email(String emailId, String type, String unityId) {
+		super();
+		this.emailId = emailId;
+		this.type = type;
+		this.unityId = unityId;
+	}
+
 	public String getEmailId() {
 		return emailId;
 	}

@@ -8,6 +8,15 @@ public class Faculty {
 	private String professorId;
 	private String designation;
 	
+	public Faculty(){
+		
+	}
+	
+	public Faculty(String professorId, String designation) {
+		super();
+		this.professorId = professorId;
+		this.designation = designation;
+	}
 	public String getProfessorId() {
 		return professorId;
 	}

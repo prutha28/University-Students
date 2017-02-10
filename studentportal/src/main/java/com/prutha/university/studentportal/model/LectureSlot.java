@@ -12,6 +12,17 @@ public class LectureSlot {
 	private Date fromDate;
 	private Date toDate;
 
+	public LectureSlot(){
+	}
+	
+	public LectureSlot(String slotId, String dayOfWeek, Date fromDate, Date toDate) {
+		super();
+		this.slotId = slotId;
+		this.dayOfWeek = dayOfWeek;
+		this.fromDate = fromDate;
+		this.toDate = toDate;
+	}
+
 	public String getSlotId() {
 		return slotId;
 	}

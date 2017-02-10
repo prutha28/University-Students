@@ -9,6 +9,17 @@ public class Teaches {
 	private String courseid;
 	private String termId;
 	
+	public Teaches(){
+		
+	}
+	
+	public Teaches(String professorId, String courseid, String termId) {
+		super();
+		this.professorId = professorId;
+		this.courseid = courseid;
+		this.termId = termId;
+	}
+
 	public String getProfessorId() {
 		return professorId;
 	}

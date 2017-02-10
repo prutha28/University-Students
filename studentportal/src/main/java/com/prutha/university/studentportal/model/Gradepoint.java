@@ -13,6 +13,16 @@ public class Gradepoint {
 	private char grade;
 	private int creditPoints;
 	
+	public Gradepoint(){
+		
+	}
+	
+	public Gradepoint(char grade, int creditPoints) {
+		super();
+		this.grade = grade;
+		this.creditPoints = creditPoints;
+	}
+
 	public char getGrade() {
 		return grade;
 	}

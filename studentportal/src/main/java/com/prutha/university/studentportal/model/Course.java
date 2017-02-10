@@ -10,6 +10,18 @@ public class Course {
 	private String sectionNumber;
 	private int creditPoints;
 	
+	public Course(){
+		
+	}
+	
+	public Course(String courseNo, String courseName, String sectionNumber, int creditPoints) {
+		super();
+		this.courseNo = courseNo;
+		this.courseName = courseName;
+		this.sectionNumber = sectionNumber;
+		this.creditPoints = creditPoints;
+	}
+
 	public String getCourseNo() {
 		return courseNo;
 	}

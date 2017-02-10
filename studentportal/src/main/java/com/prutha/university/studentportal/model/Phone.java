@@ -9,6 +9,16 @@ public class Phone {
 	private String type;
 	private String phoneNumber;
 	
+	public Phone(){
+		
+	}
+	
+	public Phone(String unityId, String type, String phoneNumber) {
+		super();
+		this.unityId = unityId;
+		this.type = type;
+		this.phoneNumber = phoneNumber;
+	}
 	public String getUnityId() {
 		return unityId;
 	}

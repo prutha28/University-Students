@@ -9,6 +9,17 @@ public class ScheduledAt {
 	private String slotId;
 	private String roomNo;
 	
+	public ScheduledAt(){
+		
+	}
+	
+	public ScheduledAt(String courseId, String slotId, String roomNo) {
+		super();
+		this.courseId = courseId;
+		this.slotId = slotId;
+		this.roomNo = roomNo;
+	}
+
 	public String getCourseId() {
 		return courseId;
 	}

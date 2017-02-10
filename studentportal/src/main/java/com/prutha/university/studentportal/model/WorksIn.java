@@ -11,6 +11,15 @@ public class WorksIn {
 	private String deptId;
 	private Date since;
 	
+	public WorksIn(){
+	}
+	
+	public WorksIn(String professorId, String deptId, Date since) {
+		this.professorId = professorId;
+		this.deptId = deptId;
+		this.since = since;
+	}
+
 	public String getProfessorId() {
 		return professorId;
 	}
