@@ -1,7 +1,7 @@
 package com.prutha.university.studentportal.services;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +21,30 @@ public class MessageService {
 		return new ArrayList<Message>(messages.values());
 	}
 
+	public List<Message> listAllMessagesByYear(int year) {
+		
+		List<Message> messagesForYear = new ArrayList<Message>();
+		Calendar cal = Calendar.getInstance();
+		
+		for( Message message : messages.values()){
+			cal.setTime(message.getCreatedAt());
+			
+			if( cal.get(Calendar.YEAR) == year){
+				messagesForYear.add(message);
+			}
+		}
+		return messagesForYear;
+	}
+	
+	public List<Message> listAllMessagesPaginated( int start, int size) {
+		ArrayList<Message> listOfMessages = new ArrayList<Message>(messages.values());
+		if( start + size > messages.size())
+			return null;
+		else
+			return listOfMessages.subList(start, start + size);
+	}
+	
+	
 	public Message getMessage(int id) {
 		return messages.get(id);
 	}

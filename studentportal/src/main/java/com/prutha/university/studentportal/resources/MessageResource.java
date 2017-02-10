@@ -10,6 +10,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import com.prutha.university.studentportal.model.Message;
@@ -19,10 +20,23 @@ import com.prutha.university.studentportal.services.MessageService;
 public class MessageResource {
 
 	private MessageService service = new MessageService();
-	
+
+	// We can only have exactly one GET method, irrespective of how many queryparams we pass.
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Message> getMessages(){
+	public List<Message> getMessages(
+			@QueryParam("year") int year,
+			@QueryParam("start") int start,
+			@QueryParam("size") int size){
+		
+		if( year > 0 ){
+			service.listAllMessagesByYear(year);
+		}
+		
+		if( start >= 0  && size > 0){
+			service.listAllMessagesPaginated(start, size);
+		}
+		
 		return service.listAllMessages();
 	}
 	
