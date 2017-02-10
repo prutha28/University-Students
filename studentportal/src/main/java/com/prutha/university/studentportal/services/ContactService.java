@@ -3,24 +3,24 @@ package com.prutha.university.studentportal.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.prutha.university.studentportal.model.Contact;
+import com.prutha.university.studentportal.model.Phone;
 
 public class ContactService {
 
-	public List<Contact> getAllContacts(){
-		List<Contact> contacts = new ArrayList<Contact>();
+	public List<Phone> getAllContacts(){
+		List<Phone> contacts = new ArrayList<Phone>();
 		return null;
 	}
 	
-	public Contact getContact( String contactId){
+	public Phone getContact( String contactId){
 		return null;	
 	}
 	
-	public boolean addContact( Contact contact){
+	public boolean addContact( Phone contact){
 		return false;	
 	}
 	
-	public boolean updateContact( Contact contact){
+	public boolean updateContact( Phone contact){
 		return false;	
 	}
 	
