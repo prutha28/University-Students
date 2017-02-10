@@ -27,7 +27,7 @@ public class MessageResource {
 	}
 	
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{messageId}")
 	public Message getMessage( @PathParam("messageId") int id){
 		return service.getMessage(id);
@@ -45,7 +45,10 @@ public class MessageResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{messageId}")
 	public Message updateMessage(@PathParam("messageId")int id, Message m){
-		return service.updateMessage(id, m);
+		// Important : This makes sure that the id in the pathparam overrides the id 
+		// passed by the client in request body ( If At all). 
+		m.setId(id);
+		return service.updateMessage(m);
 	}
 	
 	@DELETE
