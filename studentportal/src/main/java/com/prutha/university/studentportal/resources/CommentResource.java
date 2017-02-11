@@ -52,7 +52,8 @@ public class CommentResource {
 			@PathParam("messageId") int messageId, 
 			@PathParam("commentId") int commentId, 
 			Comment comment){
-		return service.updateComment(messageId, commentId, comment);
+		comment.setId(commentId);
+		return service.updateComment(messageId, comment);
 	}
 	
 	@DELETE

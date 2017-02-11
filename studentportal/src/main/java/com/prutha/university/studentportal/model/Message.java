@@ -1,8 +1,11 @@
 package com.prutha.university.studentportal.model;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
 public class Message {
@@ -11,7 +14,19 @@ public class Message {
 	private String message;
 	private String author;
 	private Date createdAt;
+	private Map<Integer, Comment> comments = new HashMap<>();
 	
+	// The XmlTrasient annotation tells jersey not to include this field
+	// when converting the java object to JSON/XML.
+	@XmlTransient
+	public Map<Integer, Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(Map<Integer, Comment> comments) {
+		this.comments = comments;
+	}
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.prutha.university.studentportal.model.Address;
+import com.prutha.university.studentportal.model.Comment;
 import com.prutha.university.studentportal.model.Course;
 import com.prutha.university.studentportal.model.Department;
 import com.prutha.university.studentportal.model.Email;
@@ -33,7 +34,12 @@ public class Database {
 	private static Map<Integer, Gradepoint> grades = new HashMap<Integer, Gradepoint>();
 	private static Map<Integer, LectureSlot> schedules = new HashMap<Integer, LectureSlot>();
 	private static Map<Integer, Department> departments = new HashMap<Integer, Department>();
+	private static Map<Integer, Comment> commnets = new HashMap<Integer, Comment>();
 	
+	public static Map<Integer, Comment> getCommnets() {
+		return commnets;
+	}
+
 	public static Map<Integer, Department> getDepartments() {
 		return departments;
 	}
@@ -42,6 +48,54 @@ public class Database {
 		return messages;
 	}
 	
+	public static void setMessages(Map<Integer, Message> messages) {
+		Database.messages = messages;
+	}
+
+	public static void setProfiles(Map<Integer, Profile> profiles) {
+		Database.profiles = profiles;
+	}
+
+	public static void setStudents(Map<Integer, Student> students) {
+		Database.students = students;
+	}
+
+	public static void setCourses(Map<Integer, Course> courses) {
+		Database.courses = courses;
+	}
+
+	public static void setFaculties(Map<Integer, Faculty> faculties) {
+		Database.faculties = faculties;
+	}
+
+	public static void setAddresses(Map<Integer, Address> addresses) {
+		Database.addresses = addresses;
+	}
+
+	public static void setPhones(Map<Integer, Phone> phones) {
+		Database.phones = phones;
+	}
+
+	public static void setEmails(Map<Integer, Email> emails) {
+		Database.emails = emails;
+	}
+
+	public static void setGrades(Map<Integer, Gradepoint> grades) {
+		Database.grades = grades;
+	}
+
+	public static void setSchedules(Map<Integer, LectureSlot> schedules) {
+		Database.schedules = schedules;
+	}
+
+	public static void setDepartments(Map<Integer, Department> departments) {
+		Database.departments = departments;
+	}
+
+	public static void setCommnets(Map<Integer, Comment> commnets) {
+		Database.commnets = commnets;
+	}
+
 	public static Map<Integer, Student> getStudents() {
 		return students;
 	}

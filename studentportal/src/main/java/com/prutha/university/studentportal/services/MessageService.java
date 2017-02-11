@@ -2,19 +2,39 @@ package com.prutha.university.studentportal.services;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.prutha.university.studentportal.database.Database;
+import com.prutha.university.studentportal.model.Comment;
 import com.prutha.university.studentportal.model.Message;
 
 public class MessageService {
 
 	private Map<Integer, Message> messages = Database.getMessages();
+	private Map<Integer, Comment> comments = Database.getCommnets();
 	
+	public Map<Integer, Message> getMessages() {
+		return messages;
+	}
+
+	public Map<Integer, Comment> getComments() {
+		return comments;
+	}
+
 	public MessageService(){
 		messages.put(1, new Message(1, "Hello World!", "prutha"));
 		messages.put(2, new Message(2, "Hello everyone!", "prisha"));
+		
+		Message message1 = messages.get(1);
+		Map<Integer, Comment> comments = new HashMap<Integer, Comment>();
+		comments.put(1, new Comment(1, "Hello World! comment", "nishak"));
+		comments.put(2, new Comment(2, "Hello everyone! comment", "nishak"));
+		message1.setComments(comments);
+		
+		Database.setMessages(messages);
+		Database.setCommnets(comments);
 	}
 	
 	public List<Message> listAllMessages() {
