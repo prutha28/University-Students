@@ -64,8 +64,7 @@ public class MessageService {
 			return listOfMessages.subList(start, start + size);
 	}
 	
-	
-	public Message getMessage(int id) {
+	public Message getMessage(int id){
 		return messages.get(id);
 	}
 

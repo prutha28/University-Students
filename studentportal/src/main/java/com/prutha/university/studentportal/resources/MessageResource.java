@@ -1,5 +1,6 @@
 package com.prutha.university.studentportal.resources;
 
+import java.net.URI;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -11,7 +12,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 
 import com.prutha.university.studentportal.model.Message;
 import com.prutha.university.studentportal.services.MessageService;
@@ -43,15 +47,25 @@ public class MessageResource {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{messageId}")
-	public Message getMessage( @PathParam("messageId") int id){
+	public Message getMessage( @PathParam("messageId") int id) {
 		return service.getMessage(id);
 	}
+	
+	// Step1: Return a Response object in place of the actual Message Entity
+	// Step2: Use the @Context Annotation to get the URI for the Message Resource
+	// Step3: Use the getAbsolutePathBuilder to form the resource URI
+	// Step4: Pass the location in Step3 to Response.created method.
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Message addMessage(Message message){
-		return service.addMessage(message);
+	public Response addMessage(@Context UriInfo uriInfo,  Message message){
+		Message newMessage =  service.addMessage(message);
+		String newMessageId = String.valueOf(newMessage.getId());
+		URI location = uriInfo.getAbsolutePathBuilder().path(newMessageId).build();
+		return Response.created(location)
+				.entity(newMessage)
+				.build();
 	}
 	
 	@PUT
