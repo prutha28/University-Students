@@ -29,7 +29,7 @@ public class MessageResource {
 
 	// We can only have exactly one GET method, irrespective of how many queryparams we pass.
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(value = {MediaType.APPLICATION_XML,  MediaType.APPLICATION_JSON })
 	public List<Message> getMessages(
 			@QueryParam("year") int year,
 			@QueryParam("start") int start,
@@ -47,7 +47,7 @@ public class MessageResource {
 	}
 	
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(value = {MediaType.APPLICATION_XML,  MediaType.APPLICATION_JSON })
 	@Path("/{messageId}")
 	public Response getMessage( @PathParam("messageId") int id,
 								@Context UriInfo uriInfo) {
