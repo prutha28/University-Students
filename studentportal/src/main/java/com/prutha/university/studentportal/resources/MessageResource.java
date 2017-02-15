@@ -15,6 +15,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
 import com.prutha.university.studentportal.exceptions.MyDataNotFoundException;
@@ -48,11 +49,32 @@ public class MessageResource {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{messageId}")
-	public Message getMessage( @PathParam("messageId") int id) {
+	public Response getMessage( @PathParam("messageId") int id,
+								@Context UriInfo uriInfo) {
+		
 		Message m = service.getMessage(id);
 		if( m == null )
 			throw new MyDataNotFoundException();
-		return service.getMessage(id);
+
+		else{
+			String uri = getURLForSelf(id, uriInfo);
+			m.addLinkToList(uri, "self");
+			
+		}
+	
+		return Response.status(Status.OK)
+					   .entity(m)
+					   .build();
+		
+	}
+
+	private String getURLForSelf(int id, UriInfo uriInfo) {
+		String uri = uriInfo.getBaseUriBuilder() // http://localhost:8080/webapi/
+				.path(MessageResource.class)	// finds the class level annotation  e.g. /messages
+				.path(Integer.toString(id))
+				.build()
+				.toString();
+		return uri;
 	}
 	
 	// Step1: Return a Response object in place of the actual Message Entity

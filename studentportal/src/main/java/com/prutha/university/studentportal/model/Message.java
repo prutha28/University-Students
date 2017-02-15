@@ -1,7 +1,9 @@
 package com.prutha.university.studentportal.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.xml.bind.annotation.XmlRootElement;
@@ -15,6 +17,16 @@ public class Message {
 	private String author;
 	private Date createdAt;
 	private Map<Integer, Comment> comments = new HashMap<>();
+	private List<Link> links = new ArrayList<Link>();
+	
+	public List<Link> getLinks() {
+		return links;
+	}
+
+	public void setLinks(List<Link> links) {
+		this.links = links;
+	}
+
 	
 	// The XmlTrasient annotation tells jersey not to include this field
 	// when converting the java object to JSON/XML.
@@ -70,6 +82,11 @@ public class Message {
 		this.message = message;
 		this.author = author;
 		this.createdAt = new Date(); 
+	}
+	
+	public void addLinkToList( String url, String rel){
+		Link link = new Link(url, rel);
+		links.add(link);
 	}
 
 }
