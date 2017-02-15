@@ -86,9 +86,9 @@ public class MessageResource {
 	private String getURLForComments(Message m , UriInfo uriInfo) {
 		String url = uriInfo.getBaseUriBuilder() //		http://localhost:8080/webapi/
 							.path(MessageResource.class)  //	messages/
-							.path(MessageResource.class, "getCommentResource")	// /{messageId}/comments
+							.path(MessageResource.class, "getCommentResource")	// (className, methodName)	/{messageId}/comments
 							.path(CommentResource.class)		// Good practice to include this, just in case it changes later
-							.resolveTemplate("messageId", m.getId())
+							.resolveTemplate("messageId", m.getId())	// to resolve the value for {messageId}
 							.toString();
 		return url;
 	}
