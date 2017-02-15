@@ -60,6 +60,12 @@ public class MessageResource {
 			String uri = getURLForSelf(id, uriInfo);
 			m.addLinkToList(uri, "self");
 			
+			String profileUri = getURLForProfiles(m.getAuthor(), uriInfo);
+			m.addLinkToList(profileUri, "profile");
+			
+			String commentsUri = getURLForComments(m, uriInfo);
+			m.addLinkToList(commentsUri, "comments");
+			
 		}
 	
 		return Response.status(Status.OK)
@@ -68,6 +74,26 @@ public class MessageResource {
 		
 	}
 
+	private String getURLForProfiles(String profileId, UriInfo uriInfo) {
+		String url = uriInfo.getBaseUriBuilder()
+							.path(ProfileResource.class)
+							.path(profileId).build()
+							.toString();
+		return url;
+	}
+
+	
+	private String getURLForComments(Message m , UriInfo uriInfo) {
+		String url = uriInfo.getBaseUriBuilder() //		http://localhost:8080/webapi/
+							.path(MessageResource.class)  //	messages/
+							.path(MessageResource.class, "getCommentResource")	// /{messageId}/comments
+							.path(CommentResource.class)		// Good practice to include this, just in case it changes later
+							.resolveTemplate("messageId", m.getId())
+							.toString();
+		return url;
+	}
+
+	
 	private String getURLForSelf(int id, UriInfo uriInfo) {
 		String uri = uriInfo.getBaseUriBuilder() // http://localhost:8080/webapi/
 				.path(MessageResource.class)	// finds the class level annotation  e.g. /messages

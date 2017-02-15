@@ -17,7 +17,7 @@ import com.prutha.university.studentportal.services.CommentService;
 import com.prutha.university.studentportal.services.MessageService;
 
 // NOTE: The @Path annotation is optional in case of subresources.
-
+@Path("/")	// This is optional, but it is needed if CommentResource.class will be used in HATEOAS
 public class CommentResource {
 	
 	CommentService service = new CommentService();
