@@ -11,6 +11,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
@@ -18,8 +19,9 @@ import com.prutha.university.studentportal.beans.MessageBeanFilter;
 import com.prutha.university.studentportal.model.Message;
 import com.prutha.university.studentportal.services.MessageService;
 
-@Path("/exploringAnnotations")
-public class ExploringAnnotations {
+@Path("/exploring")
+
+public class Exploring {
 
 	/**
 	 * Matrix parameters are just like query parameters, except that they are denoted by ;
@@ -30,9 +32,9 @@ public class ExploringAnnotations {
 	 * @return
 	 */
 	@GET
-	@Path("/exploringAnnotations")
+	@Path("/annotations")
 	public String showMoreAnnotations(
-			@HeaderParam("headerName") String headerValue,
+			@HeaderParam("MyHeaderName") String headerValue,
 			@MatrixParam("matrixParam") String matrixParam,
 			@CookieParam("cookieName") String cookieName){
 		return "Header Value : " + headerValue + "\n" 
@@ -40,14 +42,21 @@ public class ExploringAnnotations {
 			+ "Cookie : " + cookieName;
 	}
 	
+	// The context can help retrieve some of the important information about 
+	// HTTP Headers and other URI related stuff. The user need not know the
+	// name of the header etc.
 	@GET
-	@Path("/exploringContext")
-	public String showContext(
-			@Context UriInfo uriInfo, @Context HeaderParam headers){
-		return "Headers : " + headers + "\n" 
+	@Path("/context")
+	public String showContext(	@Context UriInfo uriInfo, 
+								@Context HttpHeaders headers){
+		
+		return "Header Value: " + headers.getHeaderString("MyHeaderName") + "\n" 
 			+ "Absolute Path : " + uriInfo.getAbsolutePath() +  "\n" ;
 	}
 	
+	// Instead of having multiple @Queryparams in the method signature,
+	// we can simply include all of these parameters in a single class
+	// to avoid having to pass multiple arguments to the method.
 	@GET
 	@Path("/beanParams")
 	public List<Message> getMessages(@BeanParam MessageBeanFilter messageBean){
