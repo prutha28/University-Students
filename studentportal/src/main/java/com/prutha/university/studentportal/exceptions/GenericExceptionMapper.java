@@ -15,7 +15,7 @@ import com.prutha.university.studentportal.model.ErrorMessage;
  *
  */
 
-@Provider
+//@Provider
 public class GenericExceptionMapper implements ExceptionMapper<Throwable> {
 
 	@Override

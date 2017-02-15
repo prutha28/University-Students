@@ -6,8 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
+
 import com.prutha.university.studentportal.database.Database;
 import com.prutha.university.studentportal.model.Comment;
+import com.prutha.university.studentportal.model.ErrorMessage;
 import com.prutha.university.studentportal.model.Message;
 
 public class MessageService {
@@ -78,9 +83,15 @@ public class MessageService {
 
 	public Message updateMessage(Message m) {
 		
-		// Check if the id of teh updated message is greater than the size of teh list
+		// Check if the id of the updated message is greater than the size of teh list
 		if( m.getId() > messages.size()){
-			return null;
+
+			ErrorMessage genericMessage = new ErrorMessage("The requested message id is not valid.", 
+					404, "documentation");
+		
+			Response errorResponse = Response.status(Status.NOT_FOUND)
+						   					  .entity(genericMessage).build();
+			throw new WebApplicationException(errorResponse);
 		}
 		else{
 			messages.put(m.getId(), m);
