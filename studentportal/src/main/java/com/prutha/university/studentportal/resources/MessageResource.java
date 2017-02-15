@@ -17,6 +17,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
+import com.prutha.university.studentportal.exceptions.MyDataNotFoundException;
 import com.prutha.university.studentportal.model.Message;
 import com.prutha.university.studentportal.services.MessageService;
 
@@ -48,6 +49,9 @@ public class MessageResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{messageId}")
 	public Message getMessage( @PathParam("messageId") int id) {
+		Message m = service.getMessage(id);
+		if( m == null )
+			throw new MyDataNotFoundException();
 		return service.getMessage(id);
 	}
 	
