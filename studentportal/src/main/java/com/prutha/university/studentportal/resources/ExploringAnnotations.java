@@ -10,7 +10,9 @@ import javax.ws.rs.MatrixParam;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.UriInfo;
 
 import com.prutha.university.studentportal.beans.MessageBeanFilter;
 import com.prutha.university.studentportal.model.Message;
@@ -36,6 +38,14 @@ public class ExploringAnnotations {
 		return "Header Value : " + headerValue + "\n" 
 			+ "Matrix Param : " + matrixParam +  "\n"
 			+ "Cookie : " + cookieName;
+	}
+	
+	@GET
+	@Path("/exploringContext")
+	public String showContext(
+			@Context UriInfo uriInfo, @Context HeaderParam headers){
+		return "Headers : " + headers + "\n" 
+			+ "Absolute Path : " + uriInfo.getAbsolutePath() +  "\n" ;
 	}
 	
 	@GET
