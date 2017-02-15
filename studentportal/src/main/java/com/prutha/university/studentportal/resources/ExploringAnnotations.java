@@ -38,4 +38,21 @@ public class ExploringAnnotations {
 			+ "Cookie : " + cookieName;
 	}
 	
+	@GET
+	@Path("/beanParams")
+	public List<Message> getMessages(@BeanParam MessageBeanFilter messageBean){
+		MessageService service = new MessageService();
+		
+		if( messageBean.getYear() > 0 ){
+			service.listAllMessagesByYear(messageBean.getYear());
+		}
+		
+		if( messageBean.getStart() >= 0  && messageBean.getSize() > 0){
+			service.listAllMessagesPaginated(messageBean.getStart(),  messageBean.getSize() );
+		}
+		
+		return service.listAllMessages();
+	}
+	
+	
 }
