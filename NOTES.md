@@ -45,21 +45,18 @@ HTTP or 'Hyper Text Transfer Protocol', is the protocol that machines use to sen
 
 ### HTTP Request
 
------------------------------------------
-| GET /pictures/kitty.jpg 	HTTP/1.1|	<------ Request Line ( HTTP Verb, File Path on the server, HTTP version)
-|---------------------------------------|
-|	Host: www.google.com 		|	
-|       Date: Sat, 09 Feb 2015		|	<------ Optional Headers 
-|	Accept: application/json	|
-|	Agent: chrome-2.0		|
-| 	Server: apache/1.3.29 		|
-|	If-none-match : "0238faaghs"	|	<------- Version of the document present in the browser's cache
-|					|	<------- Blank Line
-|---------------------------------------|	
-|	Some request message sent to 	|	<------- Request Body ( Optional )
-|	the server.			|
-|---------------------------------------|
-
+<pre>
+GET /pictures/kitty.jpg HTTP/1.1	<------ Request Line ( HTTP Verb, File Path on the server, HTTP version)
+Host: 	www.google.com 		
+Date:	Sat, 09 Feb 2015		<------ Optional Headers 
+Accept: application/json	
+Agent: 	chrome-2.0		
+Server: apache/1.3.29 		
+If-none-match : "0238faaghs"		<------- Version of the document present in the browser's cache
+					<------- Blank Line	
+Some request message sent to 	        <------- Request Body ( Optional )
+the server.			
+</pre>
 
 A typical HTTP GET request looks something like this.
 <pre>
