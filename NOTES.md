@@ -45,7 +45,7 @@ HTTP or 'Hyper Text Transfer Protocol', is the protocol that machines use to sen
 
 ### HTTP Request
 
-|---------------------------------------|
+-----------------------------------------
 | GET /pictures/kitty.jpg 	HTTP/1.1|	<------ Request Line ( HTTP Verb, File Path on the server, HTTP version)
 |---------------------------------------|
 |	Host: www.google.com 		|	
