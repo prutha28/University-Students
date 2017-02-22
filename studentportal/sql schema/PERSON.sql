@@ -16,3 +16,11 @@ NOCACHE
 LOGGING;
 
 
+ALTER TABLE `universitydb`.`PERSON` 
+CHANGE COLUMN `fname` `fname` VARCHAR(20) NOT NULL ,
+CHANGE COLUMN `lname` `lname` VARCHAR(20) NOT NULL ,
+CHANGE COLUMN `pwd` `pwd` VARCHAR(20) NOT NULL ;
+
+
+ALTER TABLE `universitydb`.`PERSON` 
+CHANGE COLUMN `lname` `lname` VARCHAR(20) NULL ;
