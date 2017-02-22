@@ -46,26 +46,24 @@ HTTP or 'Hyper Text Transfer Protocol', is the protocol that machines use to sen
 ### HTTP Request
 
 <pre>
-GET /pictures/kitty.jpg HTTP/1.1	<------ Request Line ( HTTP Verb, File Path on the server, HTTP version)
-Host: 	www.google.com 		
-Date:	Sat, 09 Feb 2015		<------ Optional Headers 
-Accept: application/json	
-Agent: 	chrome-2.0		
-Server: apache/1.3.29 		
-If-none-match : "0238faaghs"		<------- Version of the document present in the browser's cache
-					<------- Blank Line	
-Some request message sent to 	        <------- Request Body ( Optional )
-the server.			
+HTTP Verb relative file path on the server HTTP version
+(Optional set of headers)
+header1 : value1
+header2 : value2
+header3 : value3
+A blank line 
+Some request message sent to the server. ( optional)		
 </pre>
 
 A typical HTTP GET request looks something like this.
 <pre>
-	GET /animals/cat.html HTTP/1.1 
-	host: www.google.com
-	user-agent: chrome	
-	accept: text/html 
-	.
-	... More headers
+	GET /pictures/kitty.jpg HTTP/1.1	
+	Host: 	www.google.com 		
+	Date:	Sat, 09 Feb 2015		
+	Accept: application/json	
+	User-Agent: 	chrome-2.0		
+	Server: apache/1.3.29 		
+	If-none-match : "0238faaghs"	
 </pre>
 
 - The first line is called the request line and consists of the HTTP verb, the file path( That's the path where the file lies on the server) and the version of HTTP being used. 
