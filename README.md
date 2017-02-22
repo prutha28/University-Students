@@ -4,8 +4,8 @@
 # REST Endpoints
 
 
-Resource Name 	| 			Endpoint 				      			|  	Action description in words 		 							       	    | 		Participant	
-----------------|---------------------------------------------------|-------------------------------------------------------------------------------|----------------------------
+Resource Name 	| 			Endpoint 				      			|  	Action description in words 		 							       	    |	
+----------------|---------------------------------------------------|-------------------------------------------------------------------------------|
 <b>Students</b>	|	```GET /students``` 				  			|   Get all the students present in the system along with their details. 		|
 				|	```GET /students/{id}```			  			|	Get the details of a particular students 									|
 				|	```POST /students ```							|	Add a new student to the system 											|
