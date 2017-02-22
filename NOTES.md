@@ -3,17 +3,14 @@
 #HTTP
 
 ## Introduction :
-<p>
+
 Web applications are not stand-alone applications. They involve communication between the client machine on one end and the server machine on the other. 
 
 When 2 machines interact or communicate, they do so by following a set of rules/ syntax. This set of well accepted rules for communication between machines constitutes a <b>'protocol'</b>. There are several protocols used by machines, depending upon the type of communication intended. For example, FTP, HTTP, SMTP etc. These protocols exist in the application layer of the OSI model.
 
-While any tow computers can communicate with each other in a number of ways, like throgh FTP or email, there was however no common and publicly available way to share and publish comments on <b>documents<b/>. HTTP came into existence due to a need for researchers to read, publish and comment on research documents. These documents were designed as HTML documents, i.e. each document could contain references/hyperlinks to some other document. In order to transfer these documents, the HTTP protocol was designed.
-</p>
+While any tow computers can communicate with each other in a number of ways, like throgh FTP or email, there was however no common and publicly available way to share and publish comments on <b>documents</b>. HTTP came into existence due to a need for researchers to read, publish and comment on research documents. These documents were designed as HTML documents, i.e. each document could contain references/hyperlinks to some other document. In order to transfer these documents, the HTTP protocol was designed.
 
-<p>
 HTTP or 'Hyper Text Transfer Protocol', is the protocol that machines use to send and receive HTML files. HTML files are the documents that are written in "Hyper Text Markup Language". These are special documents that contains links to other documents, the links being called 'hyper links' or 'hypermedia'. 
-</p>
 
 A typical interaction between 2 machines viz HTTP protocol, can be thought of consisting of an HTTP request and an HTTP response. The machine that sends a request for a resource or for a web page is called the 'client'; and the machine that serves the request and sends the response is called the server. In an HTTP requst-response cycle, the interaction is always initiated by the client and the server responds in return to serve the request. Therefore, the HTTP protocol is sometimes called a <em>PULL protocol.</em>
 
