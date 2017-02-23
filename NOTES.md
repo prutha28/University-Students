@@ -2,18 +2,18 @@
 
 #HTTP
 
-### Introduction :
+## Introduction :
 
 Web applications are not stand-alone applications. They involve communication between the client machine on one end and the server machine on the other. 
 
 When 2 machines interact or communicate, they do so by following a set of rules/ syntax. This set of well accepted rules for communication between machines constitutes a <b><em>'protocol'</em></b>. There are several protocols used by machines, depending upon the type of communication intended. For example, FTP, HTTP, SMTP etc. These protocols exist in the application layer of the OSI model.
 
-### History Of HTTP
+## History Of HTTP
 While any two computers could communicate with each other in a number of ways, may be through FTP or email, there was no common and publicly available way to share and publish comments on documents. HTTP came into existence due to a need for researchers to read, publish and comment on research documents. These documents were designed as HTML documents, i.e. each document could contain references or hyperlinks to some other document. In order to transfer these documents, the HTTP protocol was designed.
 
 HTTP or 'Hyper Text Transfer Protocol', is the protocol that machines use to send and receive HTML files (hypermedia files). HTML files are the documents that are written in "Hyper Text Markup Language", or HTML. These are special documents that contains links to other documents, the links being called 'hyper links' or 'hypermedia'. 
 
-### Request Response Cycle
+## Request-Response Cycle
 
 - A typical interaction between 2 machines viz. HTTP protocol, can be thought of as request-response cycle, consisting of an HTTP request and an HTTP response. 
 
@@ -21,7 +21,7 @@ HTTP or 'Hyper Text Transfer Protocol', is the protocol that machines use to sen
 
 - In the HTTP request-response cycle, the interaction is always initiated by the client and the server responds in return to serve the request. Therefore, the HTTP protocol is sometimes called a <em>PULL protocol.</em>
 
-- Every HTTP request or response has a certain format. It consists of two parts- the headers and an optional payload(body). 
+- Every HTTP request or response has a certain format. Every request or a response consists of two parts- the headers and an optional *payload*(body). 
 
 - The response body could be an HTML document or a JPEG image, or whatever that the server wants to send to the client.
 
@@ -46,7 +46,7 @@ HTTP or 'Hyper Text Transfer Protocol', is the protocol that machines use to sen
 ### HTTP Request
 
 <pre>
-HTTP Verb relative file path on the server HTTP version
+Request Line ( HTTP Verb, relative file path on the server, HTTP version)
 (Optional set of headers)
 header1 : value1
 header2 : value2
@@ -68,26 +68,39 @@ A typical HTTP GET request looks something like this.
 
 - The first line is called the request line and consists of the HTTP verb, the file path( That's the path where the file lies on the server) and the version of HTTP being used. 
 - This is then followed by a set of headers. All headers are optional except the "Host" header, which specifies which host you are trying to access.
+
+- Why include the host name as a header in addition to the hostname in the URL?
+* As per the HTTP 1.1 specification , it is mandatory to include the hostname in the host header. This is because it is possible to have a single machine (server) host multiple websites on the same IP address and port. For example, the server that hosts the domain for www.udacity.com can also host the domain for www.example.com
+* For more on this, read this https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
+
 - Headers consists of all the meta information/additional information that the client can send to the server. A header is a key value pair separated by a ':'
 - A request can also contain the reuqest body. This is not needed in case of GET & DELETE requests. However, in case of POST and PUT requests, the request body usually contains the message body.
 
 
 ### HTTP Response
 
-|---------------------------------------|
-|	HTTP/1.1 200 OK			| <------ Status Line ( HTTP Version, Status Code, Reason phrase in plain english)
-|---------------------------------------|
-|	date: Sat, 09 Feb 2015		| <------ Optional Headers ( All headers are optional, except the "Content-Length")
-|	content-type: application/json	|
-| 	server: apache/1.3.29 		|
-|	content-length : 80		|
-|	etag : "023046872839829faaghs"	|
-|					|<------- Blank Line
-|---------------------------------------|	
-|	Some message body returned by 	|<------- Response Body 
-|	the server.			|
-|---------------------------------------|
+<pre>
+Status Line ( HTTP Version, Status Code, Reason phrase or status code in plain english)
+Optional Headers ( All headers are optional, except the "Content-Length")
+Blank Line
+Response Body/payload
+</pre>
 
+A typical http response looks like this :
+<pre>
+	HTTP/1.1 200 OK			
+	date: Sat, 09 Feb 2015	
+	content-type: application/json
+ 	server: apache/1.3.29 		
+	content-length : 80		
+	etag : "023046872839829faaghs"	
+	
+	<html><h1>Hello World</h1></html>			
+</pre>
+
+Note: 
+
+* The response body could be xml, json or even html. HTMl payloads are mostly meant for web applications ( when the end user is simply someone user of a web application who wants to view the content in the browser). While it is more common to have an XML/JSON payload in case of Web Services/APIs, since the end user is an application developer who can analyse the payload.
 
 ### Some Common Response headers
 
@@ -104,56 +117,56 @@ Headers contain additional data about requests or responses. These are some of t
 <b>If-Modified-Since</b> permits the server to skip sending the actual content of the document if it hasn’t been changed since the date provided in that header. Is there something similar for ETags? Yes there is! The header is called If-None-Match and does exactly that. If the ETag for the document is still matching the ETag sent in the If-None-Match header, the server won’t send the actual document. Both If-None-Match and If-Modified-Since can be present in the same request, but the ETag takes precedence over the If-Modified-Since, as it is considered more accurate.
 
 
-### HTTP Verbs :
+## HTTP Verbs :
 
 There are 4 major HTTP verbs : GET, POST, PUT & DELETE.
 
-#### GET
+### GET
 
-#### POST
+### POST
 
-#### PUT
+### PUT
 
-#### DELETE
+### DELETE
 
-#### HEAD
+### HEAD
 It lets you get the headers of the request without having to retrive the entire file itself. Such a request can be used to determine if there is enough space on the client to store the data from the request ( Content-Length header) or if the copy of the document in the browser's cache is the latest one or not. That way the browser can skip downloading the file if it has the latest version of the file in its cache. However, sending a HEAD request is generally followed by a subsequent GET request. This can lead to an overhead due to multiple roundtrips. Our aim should be to reduce the number of roundtrips. 
 
-#### OPTIONS
+### OPTIONS
 
 - Lets you know list of verbs that the server currently supports.
 This method is important when we talk about CORs.
 
-#### PATCH
+### PATCH
 
-### Idempotency of methods
+## Idempotency of methods
 An operation in general (or an HTTP method in particular) is said to be <em>idempotent</em>, if performing the operation multiple times has the same effect on the system, when it was performed the very first time. 
 For example, GET, PUT and DELETE are all idempotent; while POST is non-idempotent because each POST requests creates a new entity with a new Id.
 
-### PUT vs PATCH
+## PUT vs PATCH
 
 While PUT requires the sender of the request to specify the entire resource (the fields with changed values, as well as those with the same values) in the request body, PATCH needs the request body to contain only those fields of the entity whose values are to be changed.
 
-### URL( Uniform Resource Locator)
+## URL( Uniform Resource Locator)
 
 A URL is a formatted string that determines where a particular file is located on the internet. A typical URL looks like this. This is what you typically type in your browser. 
 	<pre>
-		http://www.ncsu.edu:9000/csc505/handout.pdf
+		http://www.ncsu.edu:9000/csc505/handout.pdf#beginning
 	</pre>
 
 
 ### Parts of the URL String
-|-----------------------------------------------------------------------------------------------------------------------|
-| 	Part	 	    | 		Meaning										|
-|---------------------------|-------------------------------------------------------------------------------------------|
-|	http://		    | Protocol used by the client communicate with the server 					|
-|	www.ncsu.edu	    | Domain name of the Server 								|
-|	:9000		    | Port on which the server is serving the request(default 80, if nothing is specified)      |
-|       /csc505/handout.pdf | Relative path of the file of the Server 							|
-|			    |												|
-|-----------------------------------------------------------------------------------------------------------------------|
+<pre>
+ 	Part	 	     		Meaning										
 
-#### Notes:  
+	http://		     Protocol used by the client communicate with the server 					
+	www.ncsu.edu	     Domain name of the Server 								
+	:9000		     Port on which the server is serving the request(default 80, if nothing is specified)      
+        /csc505/handout.pdf   Relative path of the file of the Server 							
+	#beginning	     A Fragment named beginning									
+</pre>
+
+* Notes:  
 
 1. The domain name of the server could also be the public IP of the server that you are making a request.
 
@@ -165,20 +178,37 @@ A URL is a formatted string that determines where a particular file is located o
 
 <pre>e.g. http://www.ncsu.edu:9000/csc505/handout.pdf?semester=spring&year=2015</pre>
 
+5. Fragments can optionally be specified at the end of a URL. It is denoted by the # symbol and come in the URL after the query parameters. It exists solely in the browser and is never sent to the server. They denote a certain section of the web page. 
 
-#### URI ( Uniform Resource Identifier)
+## URI ( Uniform Resource Identifier)
 URI is very similar to URLs. But URLs are generally used in reference to web applications while URIs are used with reference to APIs.
 
 
-# Web Services and Web Applications
+# Web Applications and Web Services
 
-# What is an API ?
+## What is an API ?
 
 # REST Architecture
 
-## REST Constraints
+<b><em>REST</em></b> stands for Representational State Transfer. 
+
+* It is NOT a protocol. ( It mostly uses the HTTP protocol, but even that is not necessary)
+* It is NOT a specification. 
+* It is NOT a framework. ( There is no such thing as an SDK for REST.)
+* Instead, it is a set of well agreed upon guidelines, constraints or principles. 
+* It is simply an architectural style that guides the decisions/choices you need to make at different points while designing network based applications. 
+* REST principles can be applied to design anything in general. But when a web service is designed by following these guidelines, we say that it is a RESTful web service.  REST + web service => RESTful Web Service.
+* Further, it is quite flexible, in that there is not a right or a wrong way of using it. Accordingly, we can have an application that is <em>"fully RESTful"</em>, or <em>"NOT RESTful"</em>, or even <em>"NOT fully RESTful"</em>.
+* We generally set out with the objective of making something <em>as RESTful as possible</em>.
+* REST has primarily been designed with the idea of making applications as scalable. It achieves scalability through its 5 REST constraints! 
 
 # REST vs SOAP
+
+-  When contrasting REST with the SOAP protocol, REST can be thought of as borrowing 10$ from a friend for lunch, while SOAP is analogous to having a well documented mortage from some formal financial institution that has all the rules laid down.
+
+## REST Constraints
+
+
 
 # JAX RS
 
