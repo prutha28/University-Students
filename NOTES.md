@@ -303,6 +303,7 @@ window.location = "http://www.example.com/";
 ```
 
 ### References
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections
 
 ### Building Mime Types inside Resources
 
