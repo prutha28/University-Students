@@ -1,6 +1,6 @@
 
 
-#HTTP
+# HTTP
 
 ## Introduction :
 
@@ -237,6 +237,74 @@ URI is very similar to URLs. But URLs are generally used in reference to web app
 ### <pre>@Context</pre> annotation
 
 ### <pre>@BeanParam</pre> annotation
+
+
+
+### HTTP Redirects/ Forwarding
+
+Web Servers can sometimes, return redirection responses instead of success messages. A redirection response is triggered by the server by sending the 3XX status codes and it redirects the browsers to go elsewhere and perform the request, as indicated by the ```Location``` response header.
+
+Redirection can happen due to one of the following reasons:
+
+#### Use Cases
+
+* Permanently Moved Resources
+This can happen when a resource on the server side has been renamed permanently, or moved to a different location on the server, thereby giving it a different URL ( e.g. Website restructuring). The web server sends a ```301 Moved Permanently``` or ```308 Permanent Redirect``` response code, thereby asking the browser to update its bookmarks, before it fetches the resource from the new location.
+
+* Temporarily Moved Resources
+This can happen when a resource has been renamed or moved, temporarily ( e.g. Site Maintenance). The server sends a ```302 Found``` or ```303 See Other``` or ```307 Temporary Redirect```. Because the change is temporary, the server does not want to client to update its bookmarks and wants the client to access the same URL for future.
+
+* Load Balancing
+If an overloaded server gets a request, that server can redirect the browser to a lesser loaded server. Response codes used are ```303 See Other``` or ```307 Temporary Redirect```.
+
+* URL augmentation/ FAT URLs
+Servers often rewrite the original URL, to include additional information, like the state of the transaction ( k/a FAT urls).
+
+* Cached Copy
+When a server side resource has not been modified since the last request, the server can redirect the browser to fetch a copy from its own cache by sending the ```304 Not Modified``` status code.
+
+* Server Affinity
+Upon receiving a request, a web server can redirect the request to another web server that contains information about the client. Response codes used are ```303 See Other``` or ```307 Temporary Redirect```.
+
+* UnSafe Requests ( POST, PUT etc.)
+Unsafe requests modify the state of the server and the user shouldn't to replay them inadvertently. Typically, you don't want your users to resent PUT, POST or DELETE requests. If you just serve the response as the result of this request, a simple press of the reload button will (possibly after a confirmation message), resend the request.
+In this case, the server can send back a 303 (See Other) request that will contain the right information, but if the reload button is pressed, only this page is redisplayed, without replaying the unsafe requests.
+
+
+* Temporary responses for long requests
+
+Some requests may need more time on the server, like sometimes DELETE requests that are scheduled for later processing. In this of case, the server redirects the browser to a page indicating that the action has been scheduled, and eventually informs about the progress, or allows to cancel it.
+
+* Domain Aliasing
+
+- Having alternative names for resources, (several domains, like with and without the www prefix or shorter and easy to remember URLs, …). In these cases, rather than duplicating the resource, it is useful to use a redirect to the one true (canonical) URL.
+
+- Forcing HTTPS. Any request to the HTTP version of the website will be redirected to the HTTPS version.
+
+- Moving to a different domain. e.g. when you change the name of the company, you'd still want to redirect the traffic to the older name, to the newer name.
+
+### Implementing Redirects
+
+1. Server Side HTTP redirects using the appropriate 3XX response codes and ```Location``` header.
+2. Inside HTML files using the ```meta``` tag and ```http-equiv```. This is especially useful when the developer has no control over what happens on the server side. When displaying the page, the browser will find the ```meta``` element and will go to the indicated page. For example,  
+
+```html
+<head> 
+  <meta http-equiv="refresh" content="0;URL='http://www.example.com/'" />
+</head>
+```
+
+3. Inside javascript files
+
+Redirections in JavaScript are created by setting a value to the ```window.location``` property and the new page is loaded.
+
+```javascript
+window.location = "http://www.example.com/";
+```
+
+### References
+
+### Building Mime Types inside Resources
 
 
 
